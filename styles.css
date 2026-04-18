@@ -74,3 +74,54 @@ body {
   outline: 3px solid #ffffff;
   outline-offset: 2px;
 }
+
+.hero__button--back {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* About page */
+
+.about {
+  max-width: 860px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.about__heading {
+  margin: 0 0 24px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #05071f;
+}
+
+.about__card {
+  background: #ece9ff;
+  border-radius: 16px;
+  padding: 36px 40px;
+  color: #05071f;
+}
+
+.about__name {
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+}
+
+.about__tagline {
+  margin: 0 0 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3d3580;
+}
+
+.about__body {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a2e;
+}
+
+.about__body:last-child {
+  margin-bottom: 0;
+}
