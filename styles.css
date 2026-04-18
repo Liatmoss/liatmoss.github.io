@@ -55,6 +55,7 @@ body {
   border-radius: 999px;
   background: transparent;
   color: #ffffff;
+  font-family: inherit;
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 600;
