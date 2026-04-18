@@ -12,7 +12,7 @@ Prototype personal site for **Liat Moss**.
   - **C# Software Engineer**
 - Below the header, there is a square **About Me thumbnail card** on the left side of the page:
   - The card uses the profile image committed at `assets/about-me-thumbnail.png`:  
-    https://github.com/user-attachments/assets/c1cb4761-7912-47c3-8a4e-59d7b9d5eb72
+    `assets/about-me-thumbnail.png`
   - A purple label box (background `#ece9ff`) sits at the top of the card with an **About Me** link that navigates to the About Me page.
   - The link text matches the `Fuelled by coffee` tagline style: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
   - The card (label + image together) is square (`250px × 250px`).
