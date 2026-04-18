@@ -80,6 +80,60 @@ body {
   display: inline-block;
 }
 
+/* Thumbnail cards (home page) */
+
+.thumbnails {
+  max-width: 1100px;
+  margin: 48px auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.thumbnail-card {
+  width: 250px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.thumbnail-card:focus-within {
+  box-shadow: 0 0 0 3px #3d3580;
+}
+.thumbnail-card__label {
+  background: #ece9ff;
+  padding: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.thumbnail-card__link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3d3580;
+  text-decoration: none;
+}
+
+.thumbnail-card__link:hover {
+  text-decoration: underline;
+}
+
+.thumbnail-card__link:focus-visible {
+  outline: 3px solid #3d3580;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.thumbnail-card__image {
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 /* About page */
 
 .about {
