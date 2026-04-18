@@ -99,6 +99,9 @@ body {
   border-radius: 12px;
 }
 
+.thumbnail-card:focus-within {
+  box-shadow: 0 0 0 3px #3d3580;
+}
 .thumbnail-card__label {
   background: #ece9ff;
   padding: 16px;
