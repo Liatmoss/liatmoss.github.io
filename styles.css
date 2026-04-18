@@ -64,3 +64,8 @@ body {
 .hero__button:hover {
   background: rgba(142, 152, 255, 0.18);
 }
+
+.hero__button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
