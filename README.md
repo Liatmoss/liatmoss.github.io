@@ -4,8 +4,8 @@ Prototype personal site for **Liat Moss**.
 
 ## Current page details
 
-- Header/hero section uses this background image:  
-  https://github.com/user-attachments/assets/2c1dedb3-91d4-4093-b278-cad338f5d35a
+- Header/hero section uses this background image (committed at `assets/hero-background.png`):  
+  https://github.com/user-attachments/assets/b22a1394-6ee9-451f-88b5-51dba7129662
 - Main page background is white.
 - Hero text includes:
   - **Liat Moss**
