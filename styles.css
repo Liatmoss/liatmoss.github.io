@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  color: #ffffff;
+}
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  padding: 64px 24px;
+  display: flex;
+  align-items: center;
+  background-color: #05071f;
+  background-image: url("./assets/hero-background.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6, 9, 38, 0.86), rgba(6, 9, 38, 0.35));
+}
+
+.hero__content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.hero__button {
+  border: 1px solid #8e98ff;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero__button:hover {
+  background: rgba(142, 152, 255, 0.18);
+}
+
+.hero__button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
