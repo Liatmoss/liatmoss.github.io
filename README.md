@@ -10,16 +10,31 @@ Prototype personal site for **Liat Moss**.
 - Hero text includes:
   - **Liat Moss**
   - **C# Software Engineer**
-- Below the header, there is a square **About Me thumbnail card** on the left side of the page:
-  - The card uses the profile image committed at `assets/about-me-thumbnail.png`:  
-    `assets/about-me-thumbnail.png`
-  - A purple label box (background `#ece9ff`) sits at the top of the card with an **About Me** link that navigates to the About Me page.
-  - The link text matches the `Fuelled by coffee` tagline style: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
-  - The card (label + image together) is square (`250px × 250px`).
-- Page is intended to grow with links to projects and blog posts.
+- Below the header, there are two square thumbnail cards on the left side of the page:
+  - **About Me card**:
+    - The card uses the profile image committed at `assets/about-me-thumbnail.png`
+    - A purple label box (background `#ece9ff`) sits at the top of the card with an **About Me** link that navigates to the About Me page.
+    - The link text style: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
+    - The card (label + image together) is square (`250px × 250px`).
+  - **Blog Posts card**:
+    - The card uses the image committed at `assets/blog-posts-thumbnail.png`
+    - A purple label box (background `#ece9ff`) sits at the top of the card with a **Blog Posts** link that navigates to the Blog Posts page.
+    - The link text style matches the About Me card: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
+    - The card (label + image together) is square (`250px × 250px`).
 
 ## About Me page
 
 - **About Me** heading sits inside the purple card, in the same purple colour as the career details line (`#3d3580`), and is the same size as the "Hi, I'm Liat Moss" text was before the update.
 - **Hi, I'm Liat Moss** heading is slightly larger than the About Me heading.
 - Career tagline reads: **Backend Engineer @ Prospa | C# and .NET coder | Develops with AI | Fuelled by coffee**
+
+## Blog Posts page
+
+- **Blog Posts** heading appears in the hero/header section (same background image as the homepage).
+- A **Back to Main Page** button appears in the hero, using the same pill-shaped button style (`hero__button`) as on the About Me page.
+- Below the header, there is one square thumbnail card:
+  - The card uses the image committed at `assets/blog-posts-thumbnail.png`.
+  - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
+  - Link text: **From Unknown to Understood: Navigating Codebases with GitHub Copilot**
+  - Link URL: `https://dev.to/liatmoss/from-unknown-to-understood-navigating-codebases-with-github-copilot-21dc`
+  - The card (label + image together) is square (`250px × 250px`).
