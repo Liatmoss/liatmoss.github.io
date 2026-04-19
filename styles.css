@@ -131,6 +131,13 @@ body {
   border-radius: 2px;
 }
 
+.thumbnail-card__description {
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #3d3580;
+}
+
 .thumbnail-card__image {
   width: 100%;
   flex: 1;
