@@ -8,7 +8,10 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #ffffff;
-  color: #ffffff;
+  color: #05071f;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .hero {
@@ -182,10 +185,16 @@ body {
 
 /* Site-wide footer */
 
+main {
+  flex: 1;
+}
+
 .site-footer {
   text-align: center;
   padding: 24px;
   font-size: 1rem;
   font-weight: 600;
   color: #3d3580;
+  background: #ece9ff;
+  border-top: 1px solid #d4cefc;
 }
