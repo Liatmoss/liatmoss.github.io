@@ -10,17 +10,17 @@ Prototype personal site for **Liat Moss**.
 - Hero text includes:
   - **Liat Moss**
   - **C# Software Engineer**
-- Below the header, there are two square thumbnail cards on the left side of the page:
+- Below the header, there are two square thumbnail cards centred on the page with a 32px gap between them:
   - **About Me card**:
     - The card uses the profile image committed at `assets/about-me-thumbnail.png`
     - A purple label box (background `#ece9ff`) sits at the top of the card with an **About Me** link that navigates to the About Me page.
     - The link text style: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
-    - The card (label + image together) is square (`250px × 250px`).
+    - The card (label + image together) is square (`350px × 350px`).
   - **Blog Posts card**:
     - The card uses the image committed at `assets/blog-posts-thumbnail.png`
     - A purple label box (background `#ece9ff`) sits at the top of the card with a **Blog Posts** link that navigates to the Blog Posts page.
     - The link text style matches the About Me card: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
-    - The card (label + image together) is square (`250px × 250px`).
+    - The card (label + image together) is square (`350px × 350px`).
 
 ## About Me page
 
@@ -37,4 +37,4 @@ Prototype personal site for **Liat Moss**.
   - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
   - Link text: **From Unknown to Understood: Navigating Codebases with GitHub Copilot**
   - Link URL: `https://dev.to/liatmoss/from-unknown-to-understood-navigating-codebases-with-github-copilot-21dc`
-  - The card (label + image together) is square (`250px × 250px`).
+  - The card (label + image together) is square (`350px × 350px`).
