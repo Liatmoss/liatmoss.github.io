@@ -9,7 +9,7 @@ Prototype personal site for **Liat Moss**.
 - Main page background is white.
 - Hero text includes:
   - **Liat Moss**
-  - **C# Software Engineer**
+  - **Software engineer focused on practical AI tooling for engineering teams**
 - Below the header, there are two square thumbnail cards centred on the page with a 32px gap between them:
   - **About Me card**:
     - The card uses the profile image committed at `assets/about-me-thumbnail.png`
@@ -27,6 +27,7 @@ Prototype personal site for **Liat Moss**.
 - **About Me** heading sits inside the purple card, in the same purple colour as the career details line (`#3d3580`), and is the same size as the "Hi, I'm Liat Moss" text was before the update.
 - **Hi, I'm Liat Moss** heading is slightly larger than the About Me heading.
 - Career tagline reads: **Backend Engineer @ Prospa | C# and .NET coder | Develops with AI | Fuelled by coffee**
+- A contact line at the bottom of the card reads: **Contact me at liatmoss@hotmail.com** (same `about__body` styling as the body paragraphs).
 
 ## Blog Posts page
 
@@ -36,5 +37,6 @@ Prototype personal site for **Liat Moss**.
   - The card uses the image committed at `assets/blog-posts-thumbnail.png`.
   - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
   - Link text: **From Unknown to Understood: Navigating Codebases with GitHub Copilot**
+  - Description text (smaller, non-bold, below the link): *Navigating unfamiliar codebases using GitHub Copilot and custom agents to create structured understanding*
   - Link URL: `https://dev.to/liatmoss/from-unknown-to-understood-navigating-codebases-with-github-copilot-21dc`
   - The card (label + image together) is square (`350px × 350px`).
