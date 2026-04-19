@@ -179,3 +179,13 @@ body {
 .about__body:last-child {
   margin-bottom: 0;
 }
+
+/* Site-wide footer */
+
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3d3580;
+}
