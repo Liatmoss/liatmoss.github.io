@@ -33,10 +33,18 @@ Prototype personal site for **Liat Moss**.
 
 - **Blog Posts** heading appears in the hero/header section (same background image as the homepage).
 - A **Back to Main Page** button appears in the hero, using the same pill-shaped button style (`hero__button`) as on the About Me page.
-- Below the header, there is one square thumbnail card:
-  - The card uses the image committed at `assets/blog-posts-thumbnail.png`.
-  - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
-  - Link text: **From Unknown to Understood: Navigating Codebases with GitHub Copilot**
-  - Description text (smaller, non-bold, below the link): *Navigating unfamiliar codebases using GitHub Copilot and custom agents to create structured understanding*
-  - Link URL: `https://dev.to/liatmoss/from-unknown-to-understood-navigating-codebases-with-github-copilot-21dc`
-  - The card (label + image together) is square (`350px × 350px`).
+- Below the header, there are two square thumbnail cards centred on the page with a 32px gap between them:
+  - **Card 1 – From Unknown to Understood**:
+    - The card uses the image committed at `assets/blog-posts-thumbnail.png`.
+    - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
+    - Link text: **From Unknown to Understood: Navigating Codebases with GitHub Copilot**
+    - Description text (smaller, non-bold, below the link): *Navigating unfamiliar codebases using GitHub Copilot and custom agents to create structured understanding*
+    - Link URL: `https://dev.to/liatmoss/from-unknown-to-understood-navigating-codebases-with-github-copilot-21dc`
+    - The card (label + image together) is square (`350px × 350px`).
+  - **Card 2 – Custom Agent or Built-In AI?**:
+    - The card uses the image committed at `assets/blog-post-custom-agent-thumbnail.jpg`.
+    - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
+    - Link text: **Custom Agent or Built-In AI? A Practical Checklist for Making the Right Choice**
+    - Description text (smaller, non-bold, below the link): *A simple framework for deciding when to use built-in AI versus designing a custom agent*
+    - Link URL: `https://dev.to/liatmoss/custom-agent-or-built-in-ai-a-practical-checklist-for-making-the-right-choice-563f`
+    - The card (label + image together) is square (`350px × 350px`).
