@@ -48,3 +48,10 @@ Prototype personal site for **Liat Moss**.
     - Description text (smaller, non-bold, below the link): *A simple framework for deciding when to use built-in AI versus designing a custom agent*
     - Link URL: `https://dev.to/liatmoss/custom-agent-or-built-in-ai-a-practical-checklist-for-making-the-right-choice-563f`
     - The card (label + image together) is square (`350px × 350px`).
+  - **Card 3 – A practical guide to getting comfortable with AI coding tools**:
+    - The card uses the image from `https://github.com/user-attachments/assets/7b72e04c-2bf7-4134-91c5-c7ede92c190d`.
+    - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
+    - Link text: **A practical guide to getting comfortable with AI coding tools**
+    - Description text (smaller, non-bold, below the link): *A simple, practical starting point for building confidence with AI coding tools.*
+    - Link URL: `https://dev.to/liatmoss/a-practical-guide-to-getting-comfortable-with-ai-coding-tools-1noo`
+    - The card (label + image together) is square (`350px × 350px`).
