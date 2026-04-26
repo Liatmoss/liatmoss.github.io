@@ -33,7 +33,7 @@ Prototype personal site for **Liat Moss**.
 
 - **Blog Posts** heading appears in the hero/header section (same background image as the homepage).
 - A **Back to Main Page** button appears in the hero, using the same pill-shaped button style (`hero__button`) as on the About Me page.
-- Below the header, there are two square thumbnail cards centred on the page with a 32px gap between them:
+- Below the header, there are four square thumbnail cards arranged in a 2×2 grid centred on the page with a 32px gap between them:
   - **Card 1 – From Unknown to Understood**:
     - The card uses the image committed at `assets/blog-posts-thumbnail.png`.
     - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
@@ -54,4 +54,11 @@ Prototype personal site for **Liat Moss**.
     - Link text: **A practical guide to getting comfortable with AI coding tools**
     - Description text (smaller, non-bold, below the link): *A simple, practical starting point for building confidence with AI coding tools.*
     - Link URL: `https://dev.to/liatmoss/a-practical-guide-to-getting-comfortable-with-ai-coding-tools-1noo`
+    - The card (label + image together) is square (`350px × 350px`).
+  - **Card 4 – Keeping You in the Driver's Seat and AI as the Copilot**:
+    - The card uses the image from `https://github.com/user-attachments/assets/0424a69d-b567-4b4c-9ab2-c4ec2f213bc6`.
+    - A purple label box (background `#ece9ff`) sits at the top of the card with a link to the dev.to article.
+    - Link text: **Keeping You in the Driver's Seat and AI as the Copilot**
+    - Description text (smaller, non-bold, below the link): *A practical look at using AI as a copilot while keeping you in control of your workflow and decisions.*
+    - Link URL: `https://dev.to/liatmoss/keeping-you-in-the-drivers-seat-and-ai-as-the-copilot-1oc8`
     - The card (label + image together) is square (`350px × 350px`).
