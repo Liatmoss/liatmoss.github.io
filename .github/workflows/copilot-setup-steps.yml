@@ -28,7 +28,7 @@ jobs:
     # Isolate Playwright browser installs and user-data per run to prevent concurrent
     # processes from sharing the same browser profile, which causes lock errors.
     env:
-      PLAYWRIGHT_BROWSERS_PATH: /tmp/playwright-brows-${{ github.run_id }}-${{ github.job }}
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/playwright-browsers-${{ github.run_id }}-${{ github.job }}
       PLAYWRIGHT_USER_DATA_DIR: /tmp/playwright-user-data-${{ github.run_id }}-${{ github.job }}
 
     steps:
