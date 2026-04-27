@@ -197,6 +197,61 @@ body {
   margin-bottom: 0;
 }
 
+/* Experience page – collapsible sections */
+
+.experience__section {
+  margin: 0 0 4px;
+}
+
+.experience__section:last-child {
+  margin-bottom: 0;
+}
+
+.experience__summary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3d3580;
+  cursor: pointer;
+  list-style: none;
+  padding: 8px 0;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.experience__summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience__summary::before {
+  content: '+';
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 1.1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.experience__section[open] > .experience__summary::before {
+  content: '−';
+}
+
+.experience__summary:hover {
+  text-decoration: underline;
+}
+
+.experience__summary:focus-visible {
+  outline: 3px solid #3d3580;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.experience__content {
+  padding: 8px 0 12px 28px;
+}
+
 /* Site-wide footer */
 
 main {

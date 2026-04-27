@@ -21,6 +21,11 @@ Prototype personal site for **Liat Moss**.
     - A purple label box (background `#ece9ff`) sits at the top of the card with a **Blog Posts** link that navigates to the Blog Posts page.
     - The link text style matches the About Me card: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
     - The card (label + image together) is square (`350px × 350px`).
+  - **Experience card**:
+    - The card uses the hero background image (`assets/hero-background.png`).
+    - A purple label box (background `#ece9ff`) sits at the top of the card with an **Experience** link that navigates to the Experience page.
+    - The link text style matches the other cards: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
+    - The card (label + image together) is square (`350px × 350px`).
 
 ## About Me page
 
@@ -62,3 +67,16 @@ Prototype personal site for **Liat Moss**.
     - Description text (smaller, non-bold, below the link): *A practical look at using AI as a copilot while keeping you in control of your workflow and decisions.*
     - Link URL: `https://dev.to/liatmoss/keeping-you-in-the-drivers-seat-and-ai-as-the-copilot-1oc8`
     - The card (label + image together) is square (`350px × 350px`).
+
+## Experience page
+
+- **Experience** heading appears in the hero/header section (same background image as the homepage).
+- A **Back to Main Page** button appears in the hero, using the same pill-shaped button style (`hero__button`) as on the About Me page.
+- Below the header, a purple card (background `#ece9ff`, `border-radius: 16px`, `padding: 36px 40px`) matching the About Me page card style contains three collapsible sections.
+- Each collapsible section uses a native HTML `<details>`/`<summary>` element so the card dynamically resizes when sections are opened or closed.
+- The heading style for each collapsible section matches the "Develops with AI" text from the About Me tagline: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
+- A `+` indicator appears before the heading when collapsed; it changes to `−` when expanded.
+- The three collapsible sections are:
+  - **Prospa** – Backend Engineer experience with C# / .NET and Azure.
+  - **Anthony Nolan** – Experience at the UK stem cell charity.
+  - **Teaching Experience** – Prior career in education before moving into software engineering in 2020.
