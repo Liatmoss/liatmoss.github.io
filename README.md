@@ -10,7 +10,7 @@ Prototype personal site for **Liat Moss**.
 - Hero text includes:
   - **Liat Moss**
   - **Software engineer focused on practical AI tooling for engineering teams**
-- Below the header, there are two square thumbnail cards centred on the page with a 32px gap between them:
+- Below the header, there are three square thumbnail cards centred on the page with a 32px gap between them, arranged in a 2×2 grid (the third card appears on a new row):
   - **About Me card**:
     - The card uses the profile image committed at `assets/about-me-thumbnail.png`
     - A purple label box (background `#ece9ff`) sits at the top of the card with an **About Me** link that navigates to the About Me page.
@@ -22,10 +22,11 @@ Prototype personal site for **Liat Moss**.
     - The link text style matches the About Me card: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
     - The card (label + image together) is square (`350px × 350px`).
   - **Experience card**:
-    - The card uses the hero background image (`assets/hero-background.png`).
+    - The card uses the image from `https://github.com/user-attachments/assets/bf116cb6-8bd4-4eeb-b0ba-a3a076eca1fc`.
     - A purple label box (background `#ece9ff`) sits at the top of the card with an **Experience** link that navigates to the Experience page.
     - The link text style matches the other cards: `font-size: 1rem`, `font-weight: 600`, `color: #3d3580`.
     - The card (label + image together) is square (`350px × 350px`).
+    - This is the third card and appears on the second row of the grid.
 
 ## About Me page
 
