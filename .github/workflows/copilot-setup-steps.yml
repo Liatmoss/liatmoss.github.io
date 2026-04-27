@@ -1,0 +1,58 @@
+name: "Copilot Setup Steps"
+
+# Playwright needs isolated browser installs in CI and checkout needs the main ref for diffs.
+# These setup steps run inside the Copilot agent job before the agent begins, fixing two
+# recurring failures:
+#   1) "Browser is already in use for /root/.cache/ms-playwright/mcp-chrome" — caused by
+#      multiple runs sharing the same browser profile directory.
+#   2) "fatal: ambiguous argument 'main'" — caused by a shallow checkout that omits the
+#      main ref that the agent uses for git diff.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    # Isolate Playwright browser installs and user-data per run to prevent concurrent
+    # processes from sharing the same browser profile, which causes lock errors.
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/playwright-browsers-${{ github.run_id }}-${{ github.job }}
+      PLAYWRIGHT_USER_DATA_DIR: /tmp/playwright-user-data-${{ github.run_id }}-${{ github.job }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Remove any stale browser profile/lock from a previous failed run on the same runner,
+      # create the per-run directories, and export the paths so all subsequent steps
+      # (including the agent's Playwright calls) inherit the isolated locations.
+      - name: Prepare Playwright cache and environment
+        if: always()
+        run: |
+          rm -rf /root/.cache/ms-playwright/mcp-chrome || true
+          mkdir -p "$PLAYWRIGHT_BROWSERS_PATH" "$PLAYWRIGHT_USER_DATA_DIR"
+          echo "PLAYWRIGHT_BROWSERS_PATH=$PLAYWRIGHT_BROWSERS_PATH" >> $GITHUB_ENV
+          echo "PLAYWRIGHT_USER_DATA_DIR=$PLAYWRIGHT_USER_DATA_DIR" >> $GITHUB_ENV
+
+      # Fetch origin/main so git diff operations inside the agent can resolve the ref.
+      # Without this the agent fails with "fatal: ambiguous argument 'main'".
+      - name: Ensure main is available for diffs
+        run: |
+          git fetch origin main || true
+          if ! git show-ref --verify --quiet refs/heads/main; then
+            git branch --track main origin/main || true
+          fi
