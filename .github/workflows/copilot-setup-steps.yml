@@ -14,17 +14,9 @@ name: "Copilot Setup Steps"
 #   https://github.com/Liatmoss/liatmoss.github.io/actions/runs/24974113268/job/73122507444
 #
 # NOTE — S3/GitHub asset downloads:
-#   Enterprise firewall rules block github-production-user-asset-*.s3.amazonaws.com so the
-#   Copilot agent cannot download images attached to GitHub issues at runtime.  To keep CI
-#   reliable without requiring firewall changes we ship committed fallback assets in the
-#   assets/ directory and pre-stage them under /tmp before the agent starts:
-#     assets/experience-thumbnail.png          — placeholder used when S3 is unreachable
-#     assets/placeholder-experience-thumbnail.png — explicit fallback copy
-#   The "Pre-stage experience thumbnail" step below copies the committed asset to
-#   /tmp/experience-thumbnail.png so that any agent step that references that path finds a
-#   valid, non-empty PNG regardless of network availability.
-#   If you need the real image, either:
-#     a) Replace assets/experience-thumbnail.png with the actual image and commit it, or
+#   The runner firewall blocks github-production-user-asset-6210df.s3.amazonaws.com.
+#   If the agent needs to download GitHub user-attachment images, either:
+#     a) Commit the image binary directly to assets/ in the repo, or
 #     b) Whitelist the S3 host in the repository's Copilot coding-agent settings
 #        (Settings → Copilot → Coding agent → Network allow-list).
 
@@ -85,21 +77,6 @@ jobs:
           echo "PLAYWRIGHT_BROWSERS_PATH=${RUNNER_TEMP}/ms-playwright" >> "$GITHUB_ENV"
           echo "PLAYWRIGHT_USER_DATA_DIR=${RUNNER_TEMP}/playwright-user-data" >> "$GITHUB_ENV"
           echo "XDG_CACHE_HOME=${RUNNER_TEMP}/xdg-cache" >> "$GITHUB_ENV"
-        shell: bash
-
-      # Pre-stage the experience thumbnail so the Copilot agent never tries to download
-      # it from github-production-user-asset-*.s3.amazonaws.com (blocked by the runner
-      # firewall).  The script prefers the committed asset, falls back to the placeholder,
-      # and as a last resort writes a built-in 1×1 PNG — it never fails the job.
-      - name: Pre-stage experience thumbnail (S3 firewall fallback)
-        if: always()
-        run: |
-          bash "${GITHUB_WORKSPACE}/scripts/download-thumbnail.sh"
-          if [ -s /tmp/experience-thumbnail.png ]; then
-            echo "Thumbnail staged at /tmp/experience-thumbnail.png ($(wc -c < /tmp/experience-thumbnail.png) bytes)"
-          else
-            echo "WARNING: /tmp/experience-thumbnail.png is empty or missing after staging attempt"
-          fi
         shell: bash
 
       # Fetch origin/main so git diff operations inside the agent can resolve the ref.
