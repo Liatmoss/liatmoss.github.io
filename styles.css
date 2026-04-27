@@ -252,6 +252,29 @@ body {
   padding: 8px 0 12px 28px;
 }
 
+.experience__subheading {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #3d3580;
+}
+
+.experience__list {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.experience__list li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.experience__list:last-child {
+  margin-bottom: 0;
+}
+
 /* Site-wide footer */
 
 main {
