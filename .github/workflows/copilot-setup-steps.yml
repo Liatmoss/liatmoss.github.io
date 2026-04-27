@@ -4,21 +4,9 @@ name: "Copilot Setup Steps"
 # These setup steps run inside the Copilot agent job before the agent begins, fixing two
 # recurring failures:
 #   1) "Browser is already in use for /root/.cache/ms-playwright/mcp-chrome" — caused by
-#      multiple runs sharing the same browser profile directory or a root-owned cache dir.
-#      Fix: redirect PLAYWRIGHT_BROWSERS_PATH, PLAYWRIGHT_USER_DATA_DIR, and XDG_CACHE_HOME
-#      to job-local writable directories under runner.temp.
+#      multiple runs sharing the same browser profile directory.
 #   2) "fatal: ambiguous argument 'main'" — caused by a shallow checkout that omits the
 #      main ref that the agent uses for git diff.
-#
-# Reference failing run:
-#   https://github.com/Liatmoss/liatmoss.github.io/actions/runs/24974113268/job/73122507444
-#
-# NOTE — S3/GitHub asset downloads:
-#   The runner firewall blocks github-production-user-asset-6210df.s3.amazonaws.com.
-#   If the agent needs to download GitHub user-attachment images, either:
-#     a) Commit the image binary directly to assets/ in the repo, or
-#     b) Whitelist the S3 host in the repository's Copilot coding-agent settings
-#        (Settings → Copilot → Coding agent → Network allow-list).
 
 on:
   workflow_dispatch:
@@ -37,12 +25,11 @@ jobs:
     permissions:
       contents: read
 
-    # Redirect all Playwright and XDG cache paths to runner.temp (always writable, unique
-    # per job) so the agent never touches /root/.cache or shares state with other jobs.
+    # Isolate Playwright browser installs and user-data per run to prevent concurrent
+    # processes from sharing the same browser profile, which causes lock errors.
     env:
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/ms-playwright
-      PLAYWRIGHT_USER_DATA_DIR: ${{ runner.temp }}/playwright-user-data
-      XDG_CACHE_HOME: ${{ runner.temp }}/xdg-cache
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/playwright-browsers-${{ github.run_id }}-${{ github.job }}
+      PLAYWRIGHT_USER_DATA_DIR: /tmp/playwright-user-data-${{ github.run_id }}-${{ github.job }}
 
     steps:
       - name: Checkout
@@ -50,34 +37,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Print runner identity and cache state to aid future debugging.
-      - name: Debug environment
-        run: |
-          id
-          whoami || true
-          echo "RUNNER_TEMP=${RUNNER_TEMP}"
-          ls -la "${RUNNER_TEMP}" || true
-          ls -la /root/.cache || true
-          env | grep -i playw || true
-        shell: bash
-
-      # Create per-job writable cache directories under runner.temp, set broad permissions
-      # so the Copilot runtime (which may run as a different uid) can access them, and
-      # export the paths into GITHUB_ENV so every subsequent step inherits them.
-      - name: Prepare Playwright cache and XDG cache
+      # Remove any stale browser profile/lock from a previous failed run on the same runner,
+      # create the per-run directories, and export the paths so all subsequent steps
+      # (including the agent's Playwright calls) inherit the isolated locations.
+      - name: Prepare Playwright cache and environment
         if: always()
         run: |
-          mkdir -p "${RUNNER_TEMP}/ms-playwright"
-          mkdir -p "${RUNNER_TEMP}/playwright-user-data"
-          mkdir -p "${RUNNER_TEMP}/xdg-cache"
-          chmod -R 0777 "${RUNNER_TEMP}/ms-playwright" "${RUNNER_TEMP}/playwright-user-data" "${RUNNER_TEMP}/xdg-cache"
-          echo "PLAYWRIGHT_BROWSERS_PATH=${RUNNER_TEMP}/ms-playwright"
-          echo "PLAYWRIGHT_USER_DATA_DIR=${RUNNER_TEMP}/playwright-user-data"
-          echo "XDG_CACHE_HOME=${RUNNER_TEMP}/xdg-cache"
-          echo "PLAYWRIGHT_BROWSERS_PATH=${RUNNER_TEMP}/ms-playwright" >> "$GITHUB_ENV"
-          echo "PLAYWRIGHT_USER_DATA_DIR=${RUNNER_TEMP}/playwright-user-data" >> "$GITHUB_ENV"
-          echo "XDG_CACHE_HOME=${RUNNER_TEMP}/xdg-cache" >> "$GITHUB_ENV"
-        shell: bash
+          rm -rf /root/.cache/ms-playwright/mcp-chrome || true
+          mkdir -p "$PLAYWRIGHT_BROWSERS_PATH" "$PLAYWRIGHT_USER_DATA_DIR"
+          echo "PLAYWRIGHT_BROWSERS_PATH=$PLAYWRIGHT_BROWSERS_PATH" >> $GITHUB_ENV
+          echo "PLAYWRIGHT_USER_DATA_DIR=$PLAYWRIGHT_USER_DATA_DIR" >> $GITHUB_ENV
 
       # Fetch origin/main so git diff operations inside the agent can resolve the ref.
       # Without this the agent fails with "fatal: ambiguous argument 'main'".
