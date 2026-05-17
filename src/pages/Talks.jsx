@@ -5,12 +5,13 @@ import imgMemory from '../assets/talks-memory-context.png'
 
 const talks = [
   {
-    title: 'Memory and Context Windows When Using AI Tools',
+    title: 'Memory and Context Windows: Best Practices for AI Tools',
     type: 'Slides',
     event: null,
     thumbnail: imgMemory,
     url: 'https://liatmoss.github.io/memory-presentation/',
-    external: true,
+    summary: 'A practical look at how context windows, memory systems, and tooling influence modern AI workflows. Covers limitations of stateless prompting, persistent memory patterns, and how developers can design more reliable AI-assisted workflows.',
+    audience: 'Developers / Engineering Teams / AI Beginners',
   },
   {
     title: 'Learning to Code with STEAM Education Tools',
@@ -18,7 +19,8 @@ const talks = [
     event: 'TECH(K)NOW DAY 2022',
     thumbnail: 'https://img.youtube.com/vi/_LbhC2kEMZM/maxresdefault.jpg',
     url: 'https://www.youtube.com/watch?v=_LbhC2kEMZM',
-    external: true,
+    summary: 'Learning to code can be a daunting experience. In this talk, I go through my experiences learning to code with block-based languages and physical computing.',
+    audience: 'Career Changers / New Developers',
   },
   {
     title: 'From Educator to Engineer',
@@ -26,7 +28,8 @@ const talks = [
     event: 'TECH(K)NOW DAY 2021',
     thumbnail: 'https://img.youtube.com/vi/pkOZYDUYmXg/maxresdefault.jpg',
     url: 'https://www.youtube.com/watch?v=pkOZYDUYmXg',
-    external: true,
+    summary: 'I go through my journey to software, from teaching coding to creating wearables and finally completing a bootcamp that helped me into my first job in software development.',
+    audience: 'Career Changers',
   },
 ]
 
@@ -58,6 +61,11 @@ function Talks() {
               <div className={styles.cardBody}>
                 <h2 className={styles.cardTitle}>{talk.title}</h2>
                 {talk.event && <p className={styles.cardEvent}>{talk.event}</p>}
+                <p className={styles.cardSummary}>{talk.summary}</p>
+                <p className={styles.cardAudience}>
+                  <span className={styles.audienceLabel}>Audience</span>
+                  {talk.audience}
+                </p>
               </div>
             </a>
           ))}
