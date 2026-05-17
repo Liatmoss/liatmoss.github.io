@@ -150,3 +150,28 @@
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.03em;
 }
+
+.cardSummary {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cardAudience {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.audienceLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(14, 165, 233, 0.8);
+}
