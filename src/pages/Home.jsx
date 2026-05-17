@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import blogThumbnail from '../assets/blog-thumbnail.png'
+import talksThumbnail from '../assets/talks-thumbnail.png'
 import styles from './Home.module.css'
 
 function Home() {
@@ -18,6 +19,12 @@ function Home() {
           <img src={blogThumbnail} alt="Blog Posts" className={styles.cardImage} />
           <div className={styles.cardBody}>
             <h2 className={styles.cardTitle}>Blog Posts</h2>
+          </div>
+        </Link>
+        <Link to="/talks" className={styles.card}>
+          <img src={talksThumbnail} alt="Talks and Workshops" className={styles.cardImage} />
+          <div className={styles.cardBody}>
+            <h2 className={styles.cardTitle}>Talks and Workshops</h2>
           </div>
         </Link>
       </section>
