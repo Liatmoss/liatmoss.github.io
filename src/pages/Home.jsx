@@ -8,7 +8,7 @@ function Home() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>Liat Moss</h1>
-          <p className={styles.subtitle}>Backend Engineer | C# .NET &amp; Azure | Exploring AI</p>
+          <p className={styles.subtitle}>Software engineer focused on practical AI tooling for engineering teams</p>
           <Link to="/about-me" className={styles.button}>About Liat</Link>
         </div>
       </section>
