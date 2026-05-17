@@ -21,11 +21,7 @@ function AboutMe() {
             <p>Liat Moss is a backend developer who writes code with C#/.NET and Azure, building APIs and systems designed to scale and last. She likes using AI tooling to learn new things and shares that knowledge with the engineering community.</p>
             <p>She moved into software engineering in 2020 from a background in education and still enjoys using the skills from teaching to help educate others on what she's working on.</p>
             <p>Outside of work, she enjoys getting hands on with technology which includes experimenting with microcontrollers and building LED wearables that respond to the environment.</p>
-            <p>
-              <a href="mailto:liatmoss@hotmail.com" className={styles.contact}>
-                Contact me at liatmoss@hotmail.com
-              </a>
-            </p>
+            <p>Contact me at liatmoss@hotmail.com</p>
           </div>
         </div>
       </section>
