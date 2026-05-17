@@ -1,0 +1,43 @@
+:root {
+  --color-bg: #0a0a1a;
+  --color-indigo: #3f51b5;
+  --color-indigo-subtle: rgba(63, 81, 181, 0.35);
+  --color-indigo-muted: rgba(63, 81, 181, 0.25);
+  --color-blue-light: #90caf9;
+  --color-glow: rgba(0, 229, 255, 0.6);
+  --color-glow-soft: rgba(0, 229, 255, 0.3);
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-text-soft: rgba(255, 255, 255, 0.85);
+
+  --text-shadow-glow:
+    0 0 40px var(--color-glow),
+    0 0 80px var(--color-glow-soft),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+
+  font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100svh;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
