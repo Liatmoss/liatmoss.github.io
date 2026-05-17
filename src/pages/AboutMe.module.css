@@ -1,0 +1,102 @@
+/* Narrow hero strip */
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  background: rgba(14, 165, 233, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.backButton:hover {
+  background: rgba(14, 165, 233, 0.18);
+  border-color: rgba(14, 165, 233, 0.7);
+}
+
+/* Bio content */
+
+.content {
+  padding: 3rem 2rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.textBox {
+  width: 100%;
+  max-width: 720px;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(
+    135deg,
+    rgba(3, 105, 161, 0.12),
+    rgba(14, 165, 233, 0.08)
+  );
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+}
+
+.title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow:
+    0 0 40px rgba(0, 229, 255, 0.5),
+    0 0 80px rgba(0, 229, 255, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.divider {
+  margin: 1.75rem 0;
+  height: 1px;
+  background: rgba(14, 165, 233, 0.2);
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.bio p {
+  margin: 0;
+  font-size: clamp(0.925rem, 1.8vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+}
+
+.contact {
+  color: #90caf9;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(144, 202, 249, 0.35);
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.contact:hover {
+  color: #bae6fd;
+  border-color: rgba(186, 230, 253, 0.6);
+}
